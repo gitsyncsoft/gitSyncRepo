@@ -1,1 +1,30 @@
-Prueba de carga
+CREATE TABLE `Reporte` (
+	`Id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`Fecha`	TEXT,
+	`IdEquipo`	INTEGER,
+	`Direccion`	TEXT,
+	`Valor`	TEXT,
+	`TipoSenal`	TEXT,
+	FOREIGN KEY(`IdEquipo`) REFERENCES `Equipo`(`Id`),
+);
+
+
+
+CREATE TABLE `AsociacionEquipoArchivoSCL` (
+	`Id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`IdEquipo`	INTEGER NOT NULL,
+	`IdArchivo`	INTEGER NOT NULL,
+	`Activo`	INTEGER NOT NULL DEFAULT 1,
+	FOREIGN KEY(`IdEquipo`) REFERENCES `Equipo`(`Id`),
+	FOREIGN KEY(`IdArchivo`) REFERENCES `ArchivoSCL`(`Id`)
+);
+
+
+CREATE TABLE `AsociacionEquipoArchivoSCL` (
+	`Id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`IdEquipo`	INTEGER NOT NULL,
+	`IdArchivo`	INTEGER NOT NULL,
+	`Activo`	INTEGER NOT NULL DEFAULT 1,
+	FOREIGN KEY(`IdEquipo`) REFERENCES `Equipo`(`Id`),
+	FOREIGN KEY(`IdArchivo`) REFERENCES `ArchivoSCL`(`Id`)
+);
