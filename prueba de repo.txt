@@ -47,3 +47,5 @@ CREATE TABLE `AsociacionEquipoArchivoSCL` (
 	FOREIGN KEY(`IdArchivo`) REFERENCES `ArchivoSCL`(`Id`)
 );
 
+
+
